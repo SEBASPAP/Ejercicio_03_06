@@ -37,8 +37,7 @@ public class Figura1 extends JPanel implements MouseListener {
     public void paint(Graphics g) {
         super.paint(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         g.setColor(this.color1);
-        //g.drawLine(0, 0, 600, 600);
-        g.drawLine(this.punto.x , this.punto.y , 200, 200);
+        g.drawArc(this.punto.x, this.punto.y, 300, 300, 150, 200);
     }
 
     @Override

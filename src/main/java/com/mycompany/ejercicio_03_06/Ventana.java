@@ -47,7 +47,7 @@ public class Ventana extends JFrame implements ActionListener {
 
     public void iniciaComponentes() {
         this.jComboBox1 = new JComboBox();
-        this.jComboBox1.addItem("LINEA");
+        this.jComboBox1.addItem("ARCO");
         this.jComboBox1.addItem("CIRCULO");
         this.jComboBox1.addItem("RECTANGULO");
         this.jComboBox2 = new JComboBox();
@@ -120,16 +120,19 @@ public class Ventana extends JFrame implements ActionListener {
                     this.add(this.figura3, BorderLayout.CENTER);
                 }
             }
+            this.figura1.updateUI();
+            this.figura2.updateUI();
+            this.figura3.updateUI();
         }
         if (e.getSource().equals(this.jButton2)) {
             System.out.println("ELIMINADO");
             this.remove(this.figura1);
             this.remove(this.figura2);
             this.remove(this.figura3);
+            this.figura1.updateUI();
+            this.figura2.updateUI();
+            this.figura3.updateUI();
         }
-        this.figura1.updateUI();
-        this.figura2.updateUI();
-        this.figura3.updateUI();
     }
 
 }
