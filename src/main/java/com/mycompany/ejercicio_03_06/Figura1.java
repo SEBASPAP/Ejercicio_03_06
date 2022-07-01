@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class Figura1 extends JPanel implements MouseListener {
 
     private Color color1;
-    private Point punto = new Point(-100, -100);
+    private Point punto = new Point(-1000, -1000);
 
     public Figura1(Color color1) {
         this.color1 = color1;

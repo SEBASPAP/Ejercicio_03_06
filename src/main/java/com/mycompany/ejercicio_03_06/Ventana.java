@@ -6,14 +6,14 @@ package com.mycompany.ejercicio_03_06;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -32,8 +32,8 @@ public class Ventana extends JFrame implements ActionListener {
 
     public Ventana(String title) throws HeadlessException {
         super(title);
-        this.setSize(600, 600);
         this.iniciaComponentes();
+        this.setSize(600, 600);
         this.setLayout(new BorderLayout());
         this.add(this.jComboBox1, BorderLayout.NORTH);
         this.add(this.jComboBox2, BorderLayout.BEFORE_LINE_BEGINS);
@@ -67,96 +67,69 @@ public class Ventana extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (this.jComboBox1.getSelectedIndex() == 0) {
-            if (this.jComboBox2.getSelectedIndex() == 2) {
-                this.figura1.setColor1(Color.ORANGE);
-                this.figura1.repaint();
-                this.add(this.figura1, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura1);
+        if (e.getSource().equals(this.jButton1)) {
+            if (this.jComboBox1.getSelectedIndex() == 0) {
+                if (this.jComboBox2.getSelectedIndex() == 2) {
+                    this.figura1.setColor1(Color.ORANGE);
+                    this.figura1.repaint();
+                    this.add(this.figura1, BorderLayout.CENTER);
+                }
+                if (this.jComboBox2.getSelectedIndex() == 5) {
+                    this.figura1.setColor1(Color.PINK);
+                    this.figura1.repaint();
+                    this.add(this.figura1, BorderLayout.CENTER);
+                }
+                if (this.jComboBox2.getSelectedIndex() == 6) {
+                    this.figura1.setColor1(Color.DARK_GRAY);
+                    this.figura1.repaint();
+                    this.add(this.figura1, BorderLayout.CENTER);
                 }
             }
-            if (this.jComboBox2.getSelectedIndex() == 5) {
-                this.figura1.setColor1(Color.PINK);
-                this.figura1.repaint();
-                this.add(this.figura1, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura1);
+            if (this.jComboBox1.getSelectedIndex() == 1) {
+                if (this.jComboBox2.getSelectedIndex() == 2) {
+                    this.figura2.setColor1(Color.ORANGE);
+                    this.figura2.repaint();
+                    this.add(this.figura2, BorderLayout.CENTER);
                 }
-            }
-            if (this.jComboBox2.getSelectedIndex() == 6) {
-                this.figura1.setColor1(Color.DARK_GRAY);
-                this.figura1.repaint();
-                this.add(this.figura1, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura1);
+                if (this.jComboBox2.getSelectedIndex() == 5) {
+                    this.figura2.setColor1(Color.PINK);
+                    this.figura2.repaint();
+                    this.add(this.figura2, BorderLayout.CENTER);
+                }
+                if (this.jComboBox2.getSelectedIndex() == 6) {
+                    this.figura2.setColor1(Color.DARK_GRAY);
+                    this.figura2.repaint();
+                    this.add(this.figura2, BorderLayout.CENTER);
                 }
             }
 
-        }
-
-        if (this.jComboBox1.getSelectedIndex() == 1) {
-            if (this.jComboBox2.getSelectedIndex() == 2) {
-                this.figura2.setColor1(Color.ORANGE);
-                this.figura2.repaint();
-                this.add(this.figura2, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura2);
+            if (this.jComboBox1.getSelectedIndex() == 2) {
+                if (this.jComboBox2.getSelectedIndex() == 2) {
+                    this.figura3.setColor1(Color.ORANGE);
+                    this.figura3.repaint();
+                    this.add(this.figura3, BorderLayout.CENTER);
                 }
-            }
-            if (this.jComboBox2.getSelectedIndex() == 5) {
-                this.figura2.setColor1(Color.PINK);
-                this.figura2.repaint();
-                this.add(this.figura2, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura2);
+                if (this.jComboBox2.getSelectedIndex() == 5) {
+                    this.figura3.setColor1(Color.PINK);
+                    this.figura3.repaint();
+                    this.add(this.figura3, BorderLayout.CENTER);
                 }
-            }
-            if (this.jComboBox2.getSelectedIndex() == 6) {
-                this.figura2.setColor1(Color.DARK_GRAY);
-                this.figura2.repaint();
-                this.add(this.figura2, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura2);
+                if (this.jComboBox2.getSelectedIndex() == 6) {
+                    this.figura3.setColor1(Color.DARK_GRAY);
+                    this.figura3.repaint();
+                    this.add(this.figura3, BorderLayout.CENTER);
                 }
             }
         }
-
-        if (this.jComboBox1.getSelectedIndex() == 2) {
-            if (this.jComboBox2.getSelectedIndex() == 2) {
-                this.figura3.setColor1(Color.ORANGE);
-                this.figura3.repaint();
-                this.add(this.figura3, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura3);
-                }
-            }
-            if (this.jComboBox2.getSelectedIndex() == 5) {
-                this.figura3.setColor1(Color.PINK);
-                this.figura3.repaint();
-                this.add(this.figura3, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura3);
-                }
-            }
-            if (this.jComboBox2.getSelectedIndex() == 6) {
-                this.figura3.setColor1(Color.DARK_GRAY);
-                this.figura3.repaint();
-                this.add(this.figura3, BorderLayout.CENTER);
-                if (e.getSource().equals(this.jButton2)) {
-                    System.out.println("ELIMINADO");
-                    this.remove(this.figura3);
-                }
-            }
+        if (e.getSource().equals(this.jButton2)) {
+            System.out.println("ELIMINADO");
+            this.remove(this.figura1);
+            this.remove(this.figura2);
+            this.remove(this.figura3);
         }
+        this.figura1.updateUI();
+        this.figura2.updateUI();
+        this.figura3.updateUI();
     }
 
 }
